@@ -1,3 +1,4 @@
+const regex = /\b[a-z]/g
 const tutorials = [
   'what does the this keyword mean?',
   'What is the Contutorialuctor OO pattern?',
@@ -12,5 +13,10 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+ let UpperCase = tutorials.map(a => a.replace(regex, s => s.toUpperCase()) )
+
+ return UpperCase
+ 
+ }
+
+
