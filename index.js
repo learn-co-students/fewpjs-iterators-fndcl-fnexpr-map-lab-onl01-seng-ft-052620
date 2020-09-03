@@ -18,13 +18,15 @@ const titleCased = () => {
 
 function titleCase(t){
   const t_array = t.split(" ")
-  const new_array = []
-  t_array.forEach((word, i) => {
-    const first_letter_cap = word.charAt(0).toUpperCase()
-    const rest_of_word = word.slice(1, word.length)
-    const titlecased = first_letter_cap + rest_of_word
-    new_array.push(titlecased)
-  });
+  const new_array = t_array.map(word => titleCasify(word))
   const titlecased_title = new_array.join(" ")
   return titlecased_title
+}
+
+
+function titleCasify(word){
+  const first_letter_cap = word.charAt(0).toUpperCase()
+  const rest_of_word = word.slice(1, word.length)
+  const titlecased_word = first_letter_cap + rest_of_word
+  return titlecased_word
 }
